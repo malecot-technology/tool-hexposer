@@ -6,10 +6,10 @@ import math
 
 
 def hex_to_rgb(hex_color):
-    hex_color = hex_color.lstrip('#')
-    if len(hex_color) != 6 or not re.fullmatch(r'[0-9a-fA-F]{6}', hex_color):
+    hex_color = hex_color.lstrip("#")
+    if len(hex_color) != 6 or not re.fullmatch(r"[0-9a-fA-F]{6}", hex_color):
         raise ValueError(f"Invalid color code: {hex_color}")
-    r, g, b = tuple(int(hex_color[i:i + 2], 16) / 255.0 for i in (0, 2, 4))
+    r, g, b = tuple(int(hex_color[i : i + 2], 16) / 255.0 for i in (0, 2, 4))
     return r, g, b
 
 
@@ -51,10 +51,15 @@ def render_palette(font, colors, output_file):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate a color palette image from hex codes with vertical text.")
+        description="Generate a color palette image from hex codes with vertical text."
+    )
     parser.add_argument("font", help="Font family name (e.g., 'Roboto')")
-    parser.add_argument("colors", nargs="+", help="List of hex color codes (e.g., #FF0000)")
-    parser.add_argument("--output", "-o", default="output.png", help="Output PNG file name")
+    parser.add_argument(
+        "colors", nargs="+", help="List of hex color codes (e.g., #FF0000)"
+    )
+    parser.add_argument(
+        "--output", "-o", default="output.png", help="Output PNG file name"
+    )
     args = parser.parse_args()
     if len(args.colors) < 2:
         parser.error("Please provide at least 2 colors.")
