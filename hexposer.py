@@ -61,6 +61,8 @@ def main():
         "--output", "-o", default="output.png", help="Output PNG file name"
     )
     args = parser.parse_args()
+    if args.font.startswith("#"):
+        parser.error("Font name appears to be a hex color code. Please provide a valid font family name.")
     if len(args.colors) < 2:
         parser.error("Please provide at least 2 colors.")
     if len(args.colors) > 16:
