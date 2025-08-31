@@ -1,6 +1,6 @@
-# Hexposer
+# Hexpose
 
-**Hexposer** is a command-line tool that generates a clean, vertical color palette image from a list
+**Hexpose** is a command-line tool that generates a clean, vertical color palette image from a list
 of hexadecimal color codes. Each swatch is labeled with its corresponding hex code, rotated
 vertically for compact, stylish presentation.
 
@@ -22,7 +22,7 @@ quick, consistent way.
 ## Usage
 
 ```bash
-./hexposer.py <font> <color1> <color2> ... <colorN> [-o OUTPUT]
+./hexpose.py <font> <color1> <color2> ... <colorN> [-o OUTPUT]
 ```
 
 ### Arguments
@@ -34,7 +34,7 @@ quick, consistent way.
 ### Example
 
 ```bash
-./hexposer.py Roboto "#000091" "#FFFFFF" "#E1000F" -o palette.png
+./hexpose.py Roboto "#000091" "#FFFFFF" "#E1000F" -o palette.png
 ```
 
 ## Notes
